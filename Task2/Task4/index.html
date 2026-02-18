@@ -4,17 +4,15 @@
     function cointoss(playerchoice){
     let computerchoice=Math.random();
     if(computerchoice>0&&computerchoice<0.5)
-    {
+    
         computerchoice="Head";
-         if (computerchoice===playerchoice)
-         {
+   else
+            computerchoice="Tail";
+     
+   if (computerchoice===playerchoice)
             alert("Playerchoice:"+playerchoice+"\nComputerchoice:"+computerchoice+"\nPlayer Wins!!!");
-
-         }}
-         else{
-            computerchoice="Tail"
-            alert("Playerchoice:"+playerchoice+"\nComputerchoice:"+computerchoice+"\nPlayer loss");
-            
-         }
+         
+   else
+            alert("Playerchoice:"+playerchoice+"\nComputerchoice:"+computerchoice+"\nPlayer loss")
     }
 </script>
