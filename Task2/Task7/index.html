@@ -1,0 +1,32 @@
+<button onclick="checkeligible(29,'normal',true)">Check Eligible</button>
+<script>
+    function checkeligible(age,ticketype,hasid){
+        if (age<=0){
+         console.log("Invalid age");
+         return
+        }
+        if(ticketype!=='normal' && 'priority')
+        {
+            console.log("Invalid type");
+            return
+        }
+        let eligible;
+        if(age>=18 && hasid)
+        {
+            eligible="Eligible";
+        }
+        else if(age<18 && ticketype==="priority"){
+            eligible="Eligible with guardian";
+        }
+        else
+          eligible="Not Eligible";
+        let fare=200;
+       if(ticketype==="priority")
+          fare=fare+50;
+       console.log("Eligibility:",eligible);
+       console.log("Fare:",fare);
+       console.log("Ticket type:",ticketype);
+       console.log("Age check",age);
+
+    }
+</script>

@@ -1,0 +1,44 @@
+<button onclick="processOrder(2000,true,'SAVE 10')">small</button>
+<button onclick="processOrder(560,false,'')">large</button>
+<button onclick="processOrder(4000,true,'ABCD')">medium</button>
+<script>
+    function processOrder(orderamount,ismember,couponcode)
+    {
+    let couponcodevalidity='invalid';
+    function validatecouponcode(couponcode){
+        if(couponcode==="SAVE 10"){
+        couponcodevalidity="valid";}
+        
+    }
+       if(orderamount>0){
+        console.log("Valid order amount");
+       }
+       else{
+        console.log("Invalid order amount");
+       }
+    let discount=0;
+    if(orderamount>=3000 && ismember){
+        discount=20;
+    }
+    else if(orderamount>=1500 && validatecouponcode(couponcode)){
+        discount=10;
+    }
+
+    else if(couponcode==="")
+        discount=0;
+    else
+       discount=5;
+    let finalamount=orderamount-(orderamount*discount/100);
+    let deliverystatus;
+    if(finalamount>=2000)
+        deliverystatus="Free delivery";
+    else
+        deliverystatus="Add 100 for delivery"
+    
+    console.log("Order amount:",orderamount);
+    console.log("Discount:",discount);
+    console.log("Final amount:",finalamount);
+    console.log("Delivery status:",deliverystatus);
+    console.log("Coupon validity:",couponcodevalidity)
+}
+</script>

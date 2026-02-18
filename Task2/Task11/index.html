@@ -1,0 +1,12 @@
+<button onclick="checkweather('rainy',12)">check weather</button>
+<script>
+    function checkweather(weather,temperature){
+        if(weather==='rainy' || temperature<20)
+          console.log("Carry umbrella");
+        else if(weather==='sunny' || temperature>20)
+           console.log("Stay hydrated")
+        else{
+            console.log("Enjoy your normal day!!")
+        }
+    }
+</script>

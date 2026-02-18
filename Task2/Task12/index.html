@@ -1,0 +1,15 @@
+<button onclick="checkpassword('priya@123')">check password</button>
+<script>
+    function checkpassword(password){
+        if(password.length<6)
+            console.log("Weak password");
+        else if(password.length>6 && password.includes("@123")) 
+    {
+            console.log("Strong password");
+    }
+        else{
+            console.log("Medium password");
+        }
+
+    }
+</script>

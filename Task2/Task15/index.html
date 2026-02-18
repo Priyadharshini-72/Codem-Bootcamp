@@ -1,0 +1,17 @@
+<button onclick="checkpaystatus(2000,true,'card')">checkpaymentstatus</button>
+<script>
+    function checkpaystatus(amount,ispaid,paymentmethod){
+        let paymentstatus;
+        if(amount<=0)
+           paymentstatus="Invalid payment amount";
+        else if(!ispaid)
+           paymentstatus="Payment pending";
+        else if(paymentmethod==='card'|| 'UPI')
+           paymentstatus="Payment successfull";
+        else
+           paymentstatus="Invalid payment method";
+        console.log("Payment status:",paymentstatus);
+        console.log("Amount:",amount);
+        console.log("Payment Method:",paymentmethod)
+        }
+</script>

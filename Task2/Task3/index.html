@@ -1,0 +1,19 @@
+<button onclick="checkOrder(true,false)">CheckOrder</button>
+<p></p>
+<script>
+    function checkOrder(ispaid,instock)
+    {
+          if(!ispaid)
+          {
+                alert("Payment required");
+          }
+          else if(ispaid && instock)
+          {
+    
+                alert("Order confirmed");
+          }
+          else{
+                alert("Order delayed")
+          }
+    }
+</script>

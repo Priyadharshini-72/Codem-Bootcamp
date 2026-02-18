@@ -1,0 +1,21 @@
+<button onclick="processmessage('System error occurred',true)">Process Message</button>
+<script>
+    function processmessage(message,isurgent){
+        if(message.trim()===""){
+            console.log("Message cannot be empty");
+            return
+        }
+        let haswarningword=message.includes("error") || message.includes("fail");
+        let ishighpriority=isurgent|| haswarningword;
+        let finalmessage;
+        if(ishighpriority){
+            finalmessage="IMPORTANT:"+message.toUpperCase();
+        }
+        else{
+            finalmessage="Information:"+message.toLowerCase();
+
+        }
+        console.log("Final message:",finalmessage);
+        console.log("High Priority:",ishighpriority);
+    }
+</script>

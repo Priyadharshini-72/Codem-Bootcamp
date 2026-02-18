@@ -1,0 +1,28 @@
+<button onclick="calculateBill(2000,false)">Regular</button>
+<button onclick="calculateBill(1200,true)">Member</button>
+<script>
+    function calculateBill(billamount,ismember){
+        if(billamount<=0)
+    {
+        console.log("log error and stop");
+    }
+    let discounts=0;
+    if(ismember){
+        discounts=10;
+    }
+    else if(billamount>=1000){
+        discounts=5;
+    } 
+    
+    let gift;
+    let finalamount=billamount-(billamount*discounts/100);
+    if(finalamount>=1500)
+         gift="free gift";
+    else
+         gift="No gift";   
+    console.log("Bill Amount:",billamount) ;   
+     console.log("final Amount:",finalamount); 
+     console.log("Discounts:",discounts) ;   
+     console.log("Gift:",gift) ;   
+    }
+</script>

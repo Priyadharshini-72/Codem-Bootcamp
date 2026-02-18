@@ -1,0 +1,25 @@
+<button onclick="detectintent('The program is not working?')">Detect Intent</button>
+<script>
+    function detectintent(message)
+    {
+        if(message.trim()===""){
+            console.log("message is invalid");
+        }
+        let isquestion=message.includes("?");
+        let iscomplaint=message.includes("problems")||message.includes("not working");
+        let intent;
+        if(iscomplaint&& isquestion){
+            intent="Urgent request";
+                }
+        else if(iscomplaint){
+            intent="Complaint";
+        }   
+        else if(isquestion){
+            intent="Question";
+        }     
+        else
+           intent="other";
+        console.log("Intent:",intent);
+        console.log("Original message:",message);
+    }
+</script>

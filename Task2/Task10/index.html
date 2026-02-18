@@ -1,0 +1,9 @@
+<button onclick="checkaccountstatus(true,false,true)">check account access status</button>
+<script>
+    function checkaccountstatus(password,OTPverification,accountblockstatus){
+        if(password&& OTPverification&& accountblockstatus)
+          console.log("Login successfully!!");
+        else
+          console.log("Login failed");
+           }
+</script>

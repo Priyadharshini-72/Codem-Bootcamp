@@ -1,0 +1,10 @@
+<button onclick="checknotify('message has error',true)">checknotification</button>
+<script>
+    function checknotify(messagecontent,isurgentflag)
+    {
+        if(messagecontent.includes("error")|| isurgentflag)
+           console.log("Important");
+        else
+           console.log("Normal");
+    }
+</script>

@@ -1,0 +1,23 @@
+<button onclick="validatelogin('admin','admin123')">Admin</button>
+<button onclick="validatelogin('user','user123')">user</button>
+<button onclick="validatelogin('guest','guest123')">guest</button>
+<script>
+    function validatelogin(username, password) {
+        if (username==="admin"&& password==="admin123") {
+                console.log("Fully access granted");
+            }
+        else if (username==="user" && password==="user123") {
+                console.log("Limited access granted");
+            
+        }
+        else if (username==="guest" && password==="guest123") {
+                console.log( "Rread-only access granted");
+            }
+        else {
+                 console.log( "Invalid credentilas");
+
+        }
+
+    }
+
+</script>
