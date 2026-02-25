@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task14</title>
+</head>
+<body>
+    <p id="display">press any key</p>
+    <style>
+        #display{
+            font-size: 50px;
+            color: brown;
+        }
+    </style>
+    <script>
+        let display=document.getElementById("display");
+        window.addEventListener("keydown",function(event){
+            display.textContent="key Down.."+event.key;
+        });
+            window.addEventListener("keyup",function(event){
+                display.textContent="key up.."+event.key;
+            });
+    </script>
+    
+</body>
+</html>

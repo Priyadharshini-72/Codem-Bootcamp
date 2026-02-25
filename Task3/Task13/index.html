@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task13</title>
+</head>
+<body>
+    <style>
+        .invalid{
+            border:2px solid red;
+            background-color: aqua;
+        }
+    </style>
+    <input type="text" id="nameinput" placeholder="Enter name" >
+    <span id="namemsg"></span>
+    <script>
+        let nameinput=document.getElementById("nameinput");
+        let namemsg=document.getElementById("namemsg");
+        nameinput.addEventListener("input",function(){
+            if(nameinput.value.trim()===""){
+                nameinput.classList.add("invalid");
+                namemsg.textContent="name cannot be empty";
+                
+            }
+            else{
+                nameinput.classList.remove("invalid");
+                namemsg.textContent="";
+                                
+
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<script>
+    let user={name:"priya",dept:"CSE",year:"third year"};
+    console.log("Before updated:",user);
+    function modifyob(object)
+    {
+           object.name="ramya";
+           object.dept="ECE";
+           object.year="second year";
+       return object;
+    }
+    let details=modifyob(user);
+    console.log("After updated:")
+    console.log("Summary of object:",details);
+    console.log("User details:",user);
+
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task12</title>
+</head>
+<body>
+    <form  id="myform">
+        <input type="text" id="username" placeholder="Enter username">
+        <input type="email" id="email" placeholder="Enter email">
+        <button type="submit">Submit</button>
+
+    </form>
+    <p id="errormsg"></p>
+    <script>
+        let form=document.getElementById("myform");
+        let errormsg=document.getElementById("errormsg");
+        form.addEventListener("submit",function(event){
+            event.preventDefault();
+            let username=document.getElementById("username").value;
+            let email=document.getElementById("email").value;
+            if(username===""|| email===""){
+                errormsg.textContent="All fields are required";
+            }
+            else{
+                errormsg.textContent="";
+                console.log("your form is valid");
+                console.log("continue submission logic");
+            }
+
+        });
+    </script>
+</body>
+</html>

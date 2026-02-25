@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task11</title>
+</head>
+<body>
+   <button class="action">button1 </button> 
+   <button class="action">button2</button>
+   <button class="action">button3</button>
+   <p id="output"></p>
+   <script>
+    let buttons=document.querySelectorAll(".action");
+    let output=document.getElementById("output");
+    buttons.forEach(function(button){
+        button.addEventListener("click",function(event){
+            let buttontext=event.target.textContent;
+            let typeevent=event.type;
+            output.textContent=" The clicked button: "+buttontext +"  Event type:" +typeevent;;
+    
+        });
+    });
+   </script>
+</body>
+</html>

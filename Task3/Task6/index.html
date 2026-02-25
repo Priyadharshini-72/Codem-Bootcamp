@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task6</title>
+</head>
+<body>
+    <p id="title">oldnews</p>
+    <p class="news1">News1</p>
+    <p class="news1">News2</p>
+    <script>
+        let oldnews=document.getElementById("title");
+        let news1=document.getElementsByClassName("news1");
+        let firstnews=document.querySelector(".news1");
+        oldnews.textContent="New news";
+        firstnews.textContent="updated news";
+        for(let i=0;i<news1.length;i++){
+            news1[i].textContent="updated text content ";
+            news1[i].style.color="red";
+            news1[i].style.fontSize="20px";
+        }
+    </script>
+
+</body>
+</html>

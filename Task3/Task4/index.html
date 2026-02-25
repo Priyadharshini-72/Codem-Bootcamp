@@ -1,0 +1,11 @@
+<script>
+    let studentmarks={ priya:40,ramya:90,suresh:80,mano:95};
+    let passmark=50;
+    for(let student in studentmarks){
+        let mark=studentmarks[student];
+        let result=mark>=passmark?"pass":"fail";
+        console.log("Name:",student);
+        console.log("mark:",mark);
+        console.log("result:",result);
+    }
+</script>

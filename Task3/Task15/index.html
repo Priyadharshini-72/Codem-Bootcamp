@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task15</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        let tododata={
+            tasks:[]
+        };
+        let app=document.getElementById("app");
+        let input=document.createElement("input");
+        let addbtn=document.createElement("button");
+        let ul=document.createElement("ul");
+        addbtn.textContent="Add task";
+        app.appendChild(input);
+        app.appendChild(addbtn);
+        app.appendChild(ul);
+        addbtn.addEventListener("click",function(){
+            let tasktext=input.value.trim();
+            if(tasktext===""){
+                alert("task cannot be empty");
+                return;
+            }
+            let taskobj={
+                text:"tasktext",complete:false
+            };
+            tododata.tasks.push(taskobj);
+            let li=document.createElement("li");
+            li.textContent=tasktext;
+            li.addEventListener("click",function(){
+                taskobj.complete=!taskobj.complete;
+                li.style.color=taskobj.complete?"red":"none";
+                if(taskobj.complete){
+                    console.log("Task completed");
+
+                }
+                else{
+                    console.olg("marks as incompleted")
+                }
+            });
+            li.addEventListener("dblclick",function(){
+                ul.removeChild(li);
+                tododata.tasks=tododata.tasks.filter(t=>t!==taskobj);
+            });
+            ul.appendChild(li);
+            input.value="";
+            console.log(tododata)
+        });
+
+    </script>
+</body>
+</html>

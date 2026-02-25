@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task7</title>
+</head>
+<body>
+    <button id="togglebtn">Toggle</button>
+    <div class="box">BOX1</div>
+    <div class="box">BOX2</div>
+    <style>
+    .active{
+        background-color: rgb(134, 165, 42);
+
+    }</style>
+    <script>
+        let button=document.getElementById("togglebtn");
+        let boxes=document.querySelectorAll(".box");
+        button.addEventListener("click",function(){
+            boxes.forEach(function(box) {
+                box.classList.toggle("active");
+            });
+        }); 
+    </script>
+
+    
+</body>
+</html>

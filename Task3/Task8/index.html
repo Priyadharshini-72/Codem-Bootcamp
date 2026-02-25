@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task8</title>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        let products=[{name:"pen",price:10},{name:"pencil",price:5}];
+        let container=document.getElementById("container");
+        let ul=document.createElement("ul");
+        products.forEach(function(product){
+            let li=document.createElement("li");
+            li.textContent=product.name +" rate:"+product.price;
+            ul.appendChild(li);
+        });
+        container.appendChild(ul);
+    </script>
+</body>
+
+</html>
+
+<script>
+
+
+</script>
