@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task1</title>
+</head>
+<body>
+    <p id="scores"></p>
+    <script>
+        let scores=[10,9,8];
+        let button1;
+        let button2;
+        let modify;
+        let max;
+        let min;
+        function displayscores(){
+            for(let i=0;i<scores.length;i++){
+              let par= document.createElement("p");               
+               par.innerHTML="player" +(i+1)+":" +scores[i];
+               document.body.append(par);
+                button1=document.createElement("button");
+                button2=document.createElement("button");
+               button1.innerHTML="Increase";
+               button2.innerHTML="Decrease";
+               document.body.append(button1,button2);
+               button1.onclick=function()
+               {
+                scores[i]++;
+                par.innerHTML="player" +(i+1)+":" +scores[i];
+                updatescore();
+
+            }
+            button2.onclick= function(){
+                scores[i]--;
+                par.innerHTML="player" +(i+1)+":" +scores[i];
+                updatescore();
+            
+            }
+        }
+            updatescore();
+            
+        } 
+        function updatescore(){
+            max=scores[0];
+             min=scores[0];
+            for(let i=0;i<scores.length;i++){
+            if(scores[i]>max)
+              max=scores[i];
+            if(scores[i]<min)
+              min=scores[i];
+            }
+            modify=document.getElementById("scores");
+            modify.innerHTML="Highest score:"+max+ " Lowestscore:"+min;
+            document.body.append(modify)
+        }
+        displayscores();
+       </script>
+    
+</body>
+</html>

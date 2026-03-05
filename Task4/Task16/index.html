@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task 16</title>
+<style>
+#grid{
+display:grid;
+grid-template-columns: repeat(3,60px);
+gap:10px;
+}
+.box{
+width:60px;
+height:60px;
+}
+</style>
+</head>
+<body>
+<div id="grid"></div>
+<script>
+let colors = ["red","blue","green","yellow"];
+let grid = document.getElementById("grid");
+let rows = 3;
+let cols = 3;
+let index = 0;
+for(let i=0;i<rows;i++){
+   for(let j=0;j<cols;j++){
+      let box = document.createElement("div");
+       box.className = "box";
+       box.style.backgroundColor = colors[index % colors.length];
+        grid.appendChild(box);
+         index++;
+    }}
+
+</script>
+</body>
+</html>

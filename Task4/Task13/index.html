@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task 13</title>
+</head>
+<body>
+<input id="commentbox">
+<button onclick="addcomment()">Add</button>
+<ul id="comments"></ul>
+<script>
+let comments=[];
+function render(){
+  let ul=document.getElementById("comments");
+    ul.innerHTML="";
+    for(let i= 0;i<comments.length;i++){
+      ul.innerHTML+= `<li>
+        ${comments[i]}
+        <button onclick="removecomments(${i})">Delete</button>
+        </li>
+        `;}
+}
+function addcomment(){
+    let text = document.getElementById("commentbox").value;
+    comments.push(text);
+    document.getElementById("commentbox").value = "";
+    render();}
+function removecomments(i){
+   comments.splice(i,1);
+   render();
+}
+</script>
+</body>
+</html>

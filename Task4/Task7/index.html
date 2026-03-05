@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task7</title>
+</head>
+<body>
+    <form id="form"></form>
+    <button onclick="submitform()">submit</button>
+    <script>
+        let fields=[{type:"text",label:"name"},{type:"email",label:"Email"}];
+        let form=document.getElementById("form");
+        for(let i=0;i<fields.length;i++){
+            let label=document.createElement("label");
+            label.textContent=fields[i].label;
+            let input=document.createElement("input");
+            input.type=fields[i].type;
+            input.id="input-"+i;
+            form.appendChild(label);
+            form.appendChild(input);
+            form.appendChild(document.createElement("br"));
+        }
+        function submitform(){
+            let formdata=[];
+            for(let i=0;i<fields.length;i++){
+                let value=document.getElementById("input-"+i).value;
+                formdata.push(value);
+            }
+            console.log(formdata)
+        }
+    </script>
+    
+</body>
+</html>

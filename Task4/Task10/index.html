@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Task 10</title>
+</head>
+<body>
+<textarea id="text" onkeyup="countchars()"></textarea>
+<p id="info"></p>
+<button onclick="submittext()">Submit</button>
+
+<script>
+let inputs = [];
+   function countchars() {
+    let value = document.getElementById("text").value;
+   document.getElementById("info").innerHTML =
+        "Characters: " + value.length +
+        "<br>Longest Input: " + getlongest();
+}
+  function submittext() {
+    let value = document.getElementById("text").value.trim();
+    if (value === "") {
+        alert("Please enter some text");
+        return;
+    }
+    inputs.push(value);
+    document.getElementById("text").value = "";
+    document.getElementById("info").innerHTML =
+        "Characters: "+value.length+"<br>Longest Input: " + getlongest();
+}
+
+    function getlongest() {
+    if (inputs.length === 0) {
+        return "None";
+    }
+    let longest = inputs[0];
+    for (let i = 1; i < inputs.length; i++) {
+        if (inputs[i].length > longest.length) {
+            longest = inputs[i];
+        }
+    }
+   return longest;
+}
+
+</script>
+
+</body>
+</html>

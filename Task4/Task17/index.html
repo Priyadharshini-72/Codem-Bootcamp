@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task 17</title>
+</head>
+<body>
+Category:
+<input id="category">
+Amount:
+<input id="amount" type="number">
+<button onclick="addExpense()">Add</button>
+<ul id="list"></ul>
+<h3 id="totals"></h3>
+<script>
+let expenses = [];
+   function addExpense(){
+     let category = document.getElementById("category").value;
+     let amount = Number(document.getElementById("amount").value);
+    expenses.push({category: category, amount: amount});
+    document.getElementById("category").value="";
+    document.getElementById("amount").value="";
+    render();
+}
+    function render(){
+        let ul = document.getElementById("list");
+        ul.innerHTML="";
+        let totals = {};
+        let grandTotal = 0;
+        for(let i=0;i<expenses.length;i++){
+          ul.innerHTML += `<li>${expenses[i].category} - ₹${expenses[i].amount}</li>`;
+          let cat = expenses[i].category;
+           let amt = expenses[i].amount;
+           if(!totals[cat]){
+                totals[cat] = 0;
+        }
+    totals[cat] += amt;
+    grandTotal += amt;
+    }
+    let output="";
+    for(let key in totals){
+        output += `${key}: ₹${totals[key]} <br>`;
+    }
+    output += `<b>Total: ₹${grandTotal}</b>`;
+    document.getElementById("totals").innerHTML = output;
+
+}
+
+</script>
+</body>
+</html>

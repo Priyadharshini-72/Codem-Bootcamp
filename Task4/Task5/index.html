@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task5</title>
+</head>
+<body>
+    <h2>pagination</h2>
+    <div id="items"></div>
+    <button onclick="prevpage()" id="prev">previous</button>
+    <button onclick="nextpage()" id="next">next</button>
+    <script>
+        let allitems=[];
+        for(let i=1;i<=20;i++){
+            allitems.push(i);
+        }
+        let currentpage=1;
+        let itemspage=5;
+        function render(){
+            let start=(currentpage-1)*itemspage;
+            let end=start+itemspage;
+            let display="";
+            for(let i=start;i<end&&i<allitems.length;i++){
+                display+=allitems[i]+"";
+            }
+            document.getElementById("items").innerHTML=display;
+            document.getElementById("prev").disabled=currentpage===1;
+            document.getElementById("next").disabled=currentpage===Math.cell(allitems.length/itemspage);    
+        }
+        function nextpage(){
+            currentpage++;
+            render();
+        }
+        function prevpage(){
+            currentpage--;
+            render();
+        }
+        render();
+    </script>
+</body>
+</html>

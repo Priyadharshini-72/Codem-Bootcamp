@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task2</title>
+</head>
+<body>
+    <select id="list">
+        <option>ALL</option>
+        <option>Electronics</option>
+        <option>Clothing</option>
+    </select>
+        <input  id="min" type="number"  placeholder="Min">
+        <input  id="max" type="number" placeholder="Max">
+        <button  onclick="filter()">Filter</button>
+        <div id="data"></div>
+
+    <script>
+      let products=[{name:"Laptop",price:5000,category:"Electronics"},
+                    {name:"shirt",price:1200,category:"clothing"}];
+        function show(result){
+            let d=document.getElementById("data");
+            d.innerHTML="";
+            if(result.length==0){
+                d.innerHTML="no products found";
+                return;
+            }
+            for(let i=0;i<result.length;i++){
+                d.innerHTML+=result[i].name+" " + result[i].price+"<br>";
+            }
+
+        }
+        function  filter(){
+             let product=document.getElementById("list").value;
+             let min=document.getElementById("min").value;
+             let max=document.getElementById("max").value;
+             let result=[];
+             for(let i=0;i<products.length;i++){
+                if(product=="ALL"|| products[i].category===product&&products[i].price>=min&&products[i].price<=max){
+                    result.push(products[i]);
+                }
+             }
+             show(result);
+
+        }
+        show(products);
+    
+    </script>
+    
+</body>
+</html>

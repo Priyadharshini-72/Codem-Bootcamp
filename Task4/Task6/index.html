@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task6</title>
+</head>
+<body>
+    <input type="text" id="search" onkeyup="searchtext()">
+    <ul id="results"></ul>
+    <script>
+        let texts=["javascripts","java","python","react"];
+        function searchtext(){
+            let value=document.getElementById("search").value.toLowerCase();
+            let ul=document.getElementById("results");
+            ul.innerHTML="";
+            let found=false;
+            for(let i=0;i<texts.length;i++){
+                if(texts[i].toLowerCase().includes(value)){
+                    let li=document.createElement("li");
+                    li.textContent=texts[i];
+                    ul.appendChild(li);
+                    found=true;
+                }
+            }
+            if(!found){
+                ul.innerHTML="no results found";
+            }
+        }
+        searchtext();
+    </script>
+</body>
+</html>

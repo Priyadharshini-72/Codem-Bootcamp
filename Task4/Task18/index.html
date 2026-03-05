@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task18
+    </title>
+</head>
+<body>
+    <ul id="list"></ul>
+    <script>
+        let items=["Item A","Item B","Item C","Item D"];
+        function render(){
+            let ul=document.getElementById("list");
+            ul.innerHTML="";
+            for(let i=0;i<items.length;i++){
+                ul.innerHTML+=`<li>${items[i]}<button onclick="up(${i})">up</button>
+                    <button onclick="down(${i})">Down</button></li>`;
+            }
+            
+        }
+        function up(i){
+            if(i>0){
+                let temp=items[i];
+                items[i]=items[i-1];
+                items[i-1]=temp;
+            }
+            render();
+        }
+        function down(i){
+            if(i<items.length-1){
+                let temp=items[i];
+                items[i]=items[i+1];
+                items[i+1]=temp;
+            }
+            render();
+        }
+        render();
+    </script>
+</body>
+</html>

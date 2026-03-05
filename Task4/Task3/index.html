@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task3</title>
+</head>
+<body>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 60%;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+  </style>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Email</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody id="tablebody"></tbody>
+</table>
+<script>
+let users = [
+  { name:"Ali",age: 22,email:"ali@mail.com" },
+  { name:"Sara",age: 25,email:"sara@mail.com" }
+];
+function render() {
+  let body = document.getElementById("tablebody");
+  body.innerHTML = "";
+  for (let i = 0; i < users.length; i++) {
+    let row = `
+      <tr>
+        <td id="name-${i}">${users[i].name}</td>
+        <td id="age-${i}">${users[i].age}</td>
+        <td>${users[i].email}</td>
+        <td>
+          <button onclick="edituser(${i})">Edit</button>
+        </td>
+      </tr>
+    `;
+    body.innerHTML += row;
+  }
+}
+function edituser(index) {
+  let nameCell = document.getElementById(`name-${index}`);
+  let ageCell = document.getElementById(`age-${index}`);
+  nameCell.innerHTML = `<input type="text"id="editname-${index}"value="${users[index].name}">`;
+  ageCell.innerHTML = `<input type="number"id="editage-${index}"value="${users[index].age}">`;
+  let actionCell = nameCell.parentElement.children[3];
+  actionCell.innerHTML = `<button onclick="saveuser(${index})">Save</button>`;
+}
+function saveuser(index) {
+  let newName = document.getElementById(`editname-${index}`).value;
+  let newAge = document.getElementById(`editage-${index}`).value;
+  users[index].name = newName;
+  users[index].age = newAge;
+  render();
+}
+render();
+</script>
+</body>
+</html>
+</body>
+
+</html>

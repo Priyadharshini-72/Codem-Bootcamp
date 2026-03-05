@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task15</title>
+</head>
+<body>
+<input type="text" id="pass" onkeyup="checkpass()">
+<ul id="rules"></ul>
+<script>
+let rules=[
+"At least 8 characters",
+"Contains number",
+"Contains capital letter"
+];
+
+function checkpass(){
+   let pass=document.getElementById("pass").value;
+   let ul=document.getElementById("rules");
+   ul.innerHTML="";
+   for(let i=0;i<rules.length;i++){
+      let li=document.createElement("li");
+      li.textContent=rules[i];
+    if(i==0 && pass.length>=8)
+        li.style.color="green";
+    if(i==1 && /\d/.test(pass))
+        li.style.color="green";
+    if(i==2 && /[A-Z]/.test(pass))
+        li.style.color="green";
+   ul.appendChild(li);
+
+}
+}
+</script>
+</body>
+</html>

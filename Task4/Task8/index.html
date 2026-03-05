@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task8</title>
+</head>
+<body>
+    <div id="students"></div>
+    <p id="count"></p>
+    <script>
+        let students=[{name:"ali",present:true},
+            {name:"sara",present:false},
+            {name:"priya",present:true},
+            {name:"ramya",present:false }
+        ];
+        function render(){
+            let div=document.getElementById("students");
+            div.innerHTML="";
+            let presentcount=0;
+            let absentcount=0;
+            for(let i=0;i<students.length;i++){
+                if(students[i].present){
+                    presentcount++;
+                }
+                else
+                  absentcount++;
+            
+            div.innerHTML+=`${students[i].name}-${students[i].present?"present":"absent"}<br><button onclick="toggle(${i})">toggle</button><br>`;}
+            document.getElementById("count").innerHTML="present:"+presentcount+"    absent:"+absentcount;
+        }
+        function toggle(index){
+            students[index].present=!students[index].present;
+            render();
+        }
+        render();
+    </script>
+</body>
+</html>

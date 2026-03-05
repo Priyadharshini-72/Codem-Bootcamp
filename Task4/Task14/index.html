@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task14</title>
+</head>
+<body>
+    <div id="items"></div>
+    <p id="total"></p>
+    <script>
+        let products=[{name:"pen",price:10},
+                       {name:"pencil",price:50},
+                       {name:"book",price:300}
+        ];
+        function render(){
+            let div=document.getElementById("items");
+            let sum=0;
+            div.innerHTML+="";
+            for(let i=0;i<products.length;i++){
+                div.innerHTML+=`${products[i].name}-$${products[i].price}<input type="number" id="qty${i}" value="0"><br>`;
+            }
+        }
+        function calculate(){
+            let total=0;
+            for(let i=0;i<products.length;i++){
+                let q=document.getElementById("qty"+i).value;
+                total+=q*products[i].price;
+            }
+            document.getElementById("total").innerHTML="total="+total;
+        }
+        render();
+    </script>
+    <button onclick="calculate()">Calculate</button>
+</body>
+</html>

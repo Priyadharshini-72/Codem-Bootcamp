@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task12
+
+    </title>
+</head>
+<body>
+    <div id="quiz"></div>
+    <button onclick="submit()">submit</button>
+    <p id="result"></p>
+    <script>
+        let questions=[{q:"2+2=?",options:["3","4","5"],answer:"4"},{q:"5+3=?",options:["3","4","8"],answer:"8"}];
+        function render(){
+            let div=document.getElementById("quiz");
+            for(let i=0;i<questions.length;i++){
+         div.innerHTML+=questions[i].q+"<br>";
+         for(let j=0;j<questions[i].options.length;j++){
+            div.innerHTML+=`<input type="radio" name="q${i}" value="${questions[i].options[j]}">${questions[i].options[j]}<br>`;
+         }
+         div.innerHTML+="<br>";
+            }
+        }
+        function submit(){
+            let score=0;
+            for(let i=0;i<questions.length;i++){
+                let selected=document.querySelector(`input[name=q${i}]:checked`);
+                if(selected&& selected.value==questions[i].answer){
+                    score++;
+                }
+            }
+            document.getElementById("result").innerHTML="score="+score;
+            console.log(score)
+        }
+        render()
+    </script>
+</body>
+</html>

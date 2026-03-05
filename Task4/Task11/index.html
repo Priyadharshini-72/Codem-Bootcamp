@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task11</title>
+</head>
+<body>
+    <div id="numbers"></div>
+    <button onclick="sortnumbers()">sort</button>
+    <script>
+        let nums=[4 ,1 ,7 ,3 ,6 ];
+        function render(){
+            let output="";
+            for(let i=0;i<nums.length;i++){
+                output+=nums[i]+"";
+            }
+            document.getElementById("numbers").innerHTML=output;
+        }
+        function sortnumbers(){
+            for(let i=0;i<nums.length;i++){
+                for(let j=0;j<nums.length-1;j++){
+                    if(nums[j]>nums[j+1]){
+                        let temp=nums[j];
+                        nums[j]=nums[j+1];
+                        nums[j+1]=temp;
+                    }
+                }
+                document.getElementById("numbers").innerHTML=nums[i];
+            }
+            render();
+        }
+        render();
+    </script>
+</body>
+</html>
