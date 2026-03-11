@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task8</title>
+</head>
+<body>
+    <h2>form Validation-Password Length Check</h2>
+    <form>
+        <input  type="text" id="user" placeholder="=Enter your Username"><br>
+        <input  type="email" id="email" placeholder="=Enter your Email"><br>
+        <input type="text" id="password" placeholder="Enter your Password"><br>
+        <button id="button">Submit</button> 
+    </form>
+    <script>
+          let user=document.getElementById("user");
+          let email=document.getElementById("email");
+          let button=document.getElementById("button");
+          let password=document.getElementById("password");
+          button.addEventListener("click",function(e){
+            e.preventDefault();
+                 if(password.value.length>=8){
+                    console.log("The form is Submitted Successfully");
+    
+                 }
+                 else{
+                    console.log("The Password  must contain (8)characters");
+                 }
+          })
+        user.style.margin="5px";
+        email.style.margin="5px";
+        button.style.margin="5px";
+        password.style.margin="5px";
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task6</title>
+</head>
+<body>
+    <h2>Form Validation-Input Presence check</h2>
+    <form>
+        <input  type="text" id="user" placeholder="=Enter your Username"><br>
+        <input  type="email" id="email" placeholder="=Enter your Email"><br>
+        <button id="button">Submit</button> 
+    </form>
+    <script>
+          let user=document.getElementById("user");
+          let email=document.getElementById("email");
+          let button=document.getElementById("button");
+          button.addEventListener("click",function(e){
+            e.preventDefault();
+                 if(user.value===""|| email.value===""){
+                    console.log("Input fields cannot be Empty");
+    
+                 }
+                 else{
+                    console.log("The Form is Submitted Successfully");
+                 }
+          })
+        user.style.margin="5px";
+        email.style.margin="5px";
+        button.style.margin="5px";
+
+    </script>
+</body>
+</html>

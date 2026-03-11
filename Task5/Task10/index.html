@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task9</title>
+</head>
+
+<body>
+    <h2>Advance function Validation</h2>
+    <form id="form">
+        <input type="text" id="user" placeholder="=Enter your Username" ><br>
+        <input type="text" id="email" placeholder="=Enter your Email" ><br>
+        <input type="text" id="password" placeholder="Enter your Password " ><br>
+        <button id="button" type="submit">Submit</button>
+    </form>
+    <script>
+        let form = document.getElementById("form")
+        let user = document.getElementById("user");
+        let email = document.getElementById("email");
+        let button = document.getElementById("button");
+        let password = document.getElementById("password");
+        function CheckUsername() {
+
+            if (user.value === "") {
+                console.log("Name  cannot be Empty");
+                return false;
+            }
+            return true;
+        }
+        
+        function CheckEmail() {
+
+            if (email.value == "") {
+                console.log("Email cannot be Empty");
+                return false;
+            }
+            if (!email.value.includes("@", ".")) {
+                console.log("The Email must contain (@ .)characters");
+                return false;
+            }
+            return true;
+        }
+        function CheckPassword() {
+            if (password.value === "") {
+                console.log("Passoword cannot be Empty");
+                return false;
+            }
+            if (password.value.length < 8) {
+                console.log("The Password  must contain (8)characters");
+                return false;
+            }
+            return true;
+        }
+        form.addEventListener("submit",function(e){
+            e.preventDefault();
+            let Name=CheckUsername();
+            let Email=CheckEmail();
+            let Pass=CheckPassword();
+            if(Name&&Email&&Pass)
+            console.log("The form is submitted successfully")
+        });
+
+        user.style.margin = "5px";
+        email.style.margin = "5px";
+        button.style.margin = "5px";
+        password.style.margin = "5px";
+
+    </script>
+</body>
+
+</html>

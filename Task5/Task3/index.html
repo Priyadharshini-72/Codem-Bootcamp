@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task3</title>
+</head>
+<body>
+    <h1>Callback Function  Implementation</h1>
+    <script>
+        function ProcessNumber(number,callback){
+           return  callback(number);
+        }
+        function Double(number){
+            return number*2;
+        }
+        function HalfValue(number){
+            return number/2;
+        }
+        let DoubleResult=ProcessNumber(5,Double);
+        let HalvesvalueResult=ProcessNumber(6,HalfValue);
+        console.log("The Double of the Number:",DoubleResult);
+        console.log("The Half of the Number:",HalvesvalueResult);
+
+    </script>
+</body>
+</html>

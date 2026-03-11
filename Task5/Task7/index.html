@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task7</title>
+</head>
+<body>
+    <h2>form Validation-Email format Check</h2>
+    <form>
+        <input  type="text" id="user" placeholder="=Enter your Username"><br>
+        <input  type="text" id="email" placeholder="=Enter your Email"><br>
+        <button id="button">Submit</button> 
+    </form>
+    <script>
+          let user=document.getElementById("user");
+          let email=document.getElementById("email");
+          let button=document.getElementById("button");
+          button.addEventListener("click",function(e){
+            e.preventDefault();
+                 if(email.value.includes("@",".")){
+                    console.log("The form is Submitted Successfully");
+    
+                 }
+                 else{
+                    console.log("The Email must contain (@ .)characters");
+                 }
+          })
+        user.style.margin="5px";
+        email.style.margin="5px";
+        button.style.margin="5px";
+
+    </script>
+</body>
+</html>
